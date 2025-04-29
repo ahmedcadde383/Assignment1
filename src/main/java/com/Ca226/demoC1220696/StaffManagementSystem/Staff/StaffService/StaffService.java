@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Service
-public class StaffService {
+public class  StaffService {
     private Map<Long, Staff> Staffs=new ConcurrentHashMap<>();
     private AtomicLong autoid=new AtomicLong();
 

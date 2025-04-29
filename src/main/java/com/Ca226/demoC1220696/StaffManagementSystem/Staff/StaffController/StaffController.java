@@ -11,7 +11,7 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/Staff")
 @AllArgsConstructor
-public class StaffController {
+public class   StaffController {
 
     private final StaffService staffService;
 
