@@ -16,37 +16,39 @@ public class  StaffService {
     public  Collection<Staff> getAllStaffs(){
         return Staffs.values();
     }
-
-    public Staff getStaffById(Long id){
-        return Staffs.get(id);
+    public Staff getStaffById(Long Id){
+        return Staffs.get(Id);
     }
 
+
+
     public Staff createStaff(Staff NewStaff){
-        Long staffid=NewStaff.getId() !=null
+        Long staffId=NewStaff.getId() !=null
                 ? NewStaff.getId()
                 :autoid.incrementAndGet();
-        NewStaff.setId(staffid);
-        Staffs.put(staffid,NewStaff);
+        NewStaff.setId(staffId);
+        Staffs.put(staffId,NewStaff);
         return  NewStaff;
     }
 
 
-public Staff UpdateStaff(Long id, Staff newStaff) {
-    if (Staffs.containsKey(id)) {
-        Staff oldStaff = getStaffById(id);
-        oldStaff.setName(newStaff.getName());
-        oldStaff.setRole(newStaff.getRole());
 
-        Staffs.put(id, oldStaff);
-        return oldStaff;
-    } else {
-        return null;
+    public Staff updateStaff(Long Id,Staff newStaff){
+        if(Staffs.containsKey(Id)){
+            Staff oldStaff=getStaffById(Id);
+            oldStaff.setName(newStaff.getName());
+            oldStaff.setRole(newStaff.getRole());
+            Staffs.put(Id,oldStaff);
+            return oldStaff;
+        }
+        else
+            return null;
     }
-}
 
 
     public void deleteStaff(Long id){
          Staffs.remove(id);
     }
+
 
 }
